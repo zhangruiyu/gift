@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>Elements</h1>
+
+            <!-- Text -->
+            <section>
+                <h2>说明</h2>
+                <p>此网站属于固始三次才过科目二--<a style="font-weight: bold;font-size: 18px">萍萍</a>--的个人网站,仅纪念未来的点点滴滴!
+                    如有侵权,那就侵着吧...那就侵着...那就侵...那就亲我吧</p>
+                <hr/>
+                <p>このサイトは固始に三回やっ科目二--<a style="font-weight: bold;font-size: 18px">萍萍</a>--の個人サイトは、未来のわずかな滴っを記念して！
+                    権利侵害、それは、侵略、それは…の侵略には、それは私には、私には、私には、私には、私は、それは、私は、それは、私は、私には、それは、私は、それは、私は、それは、私は、それは、私</p>
+                <hr/>
+            </section>
+
+            <!-- Table -->
+            <section>
+                <h3>Family</h3>
+                <div class="table-wrapper">
+                    <table class="alt">
+
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Relation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for member in members %}
+                            <tr>
+                                <td>{{ member.name }}</td>
+                                <td>{{ member.description }}</td>
+                                <td>{{ member.relation }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+
+{% endblock %}
