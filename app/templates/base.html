@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Phantom by HTML5 UP</title>
+    <title>😝啦</title>
     <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="../static/assets/css/main.css"/>
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+    {% block head %}
+    {% endblock %}
 </head>
 </head>
 <body>
@@ -20,8 +24,8 @@
 
             <!-- Logo -->
             <a href="{{ url_for('main.index') }}" class="logo">
-                <span class="symbol"><img src="../static/images/logo.svg" alt=""/></span><span
-                    class="title">Phantom</span>
+                <span class="symbol"><img src="../static/images/logo.png" alt=""/></span><span
+                    class="title"></span>
             </a>
 
             <!-- Nav -->
@@ -39,10 +43,10 @@
         <h2>Menu</h2>
         <ul>
             <li><a href="{{ url_for('main.index') }}">Home</a></li>
-            <li><a href="{{ url_for('main.generic') }}">待定</a></li>
-            <li><a href="{{ url_for('main.generic') }}">待定</a></li>
-            <li><a href="{{ url_for('main.generic') }}">待定</a></li>
-            <li><a href="{{ url_for('main.elements') }}">关于我们</a></li>
+            <li><a href="{{ url_for('main.plan') }}">旅游计划</a></li>
+            <li><a href="{{ url_for('main.message_board') }}">留言墙</a></li>
+            {#            <li><a href="{{ url_for('main.generic') }}">待定</a></li>#}
+            <li><a href="{{ url_for('main.about') }}">关于我们</a></li>
         </ul>
     </nav>
 

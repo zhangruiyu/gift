@@ -1,7 +1,7 @@
 from flask import Flask
 
 from app.extensions.database import db
-from app.models import (Family, )
+from app.models import (Family, Comments)
 from config import config
 
 

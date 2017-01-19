@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>ﾉ ✪ω✪ ʅ</h1>
+            <span class="image main"><img src="../static/images/comments_bg.png" alt=""/></span>
+            <p>夏季的风铃列车,秋季的铃虫列车和冬天限定的暖炉列车</p>
+            <p>
+                尤其是只在冬天特地时段开行的列车，因为车上装有带烟囱的旧式暖炉而被称为“暖炉列车”。暖炉里的炭火被烧得火热，还有香气四溢的烤鱿鱼，乘客们一边聊着天，一边欣赏窗外被大雪覆盖的一望无际的津轻平原，这会是一段温暖心灵的旅程。</p>
+            <p>想送你一片大自然</p>
+        </div>
+        <br/>
+        <br/>
+        <div class="inner">
+            <h2>评什么论</h2>
+            <div class="grid1_of_2">
+
+                {% for comment in comments %}
+                    <div class="grid_text">
+                        <h4 class="style1 list" style="display: inline;"><a href="#">{{ comment.name }}</a></h4>
+                        <h3 style="display: inline;" class="style">  &#12288; {{ comment.addTime }}</h3>
+                        <p class="para top">
+                            &#12288; &#12288; &#12288; {{ comment.description }}</p>
+                        {#                <a href="" class="btn1">Click to Reply</a>#}
+                        {#            </div>#}
+                        <div class="clear"></div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
