@@ -1,4 +1,5 @@
 from flask import render_template, session, redirect, url_for, jsonify
+from flask import request
 
 from app import Comments
 from app import Family
@@ -32,7 +33,29 @@ def message_board():
     return render_template('comments.html', comments=comments)
 
 
-@main.route('/message_board1', methods=['GET', 'POST'])
-def message_board1():
-    members = Family.getAllMembers()
-    return render_template('single-page.html', members=members)
+@main.route('/addFamily', methods=['GET', 'POST'])
+def addFamily():
+    try:
+        name = request.form['name']
+        nick_name = request.form['nick_name']
+        description = request.form['description']
+        relation = request.form['relation']
+        family = Family(name=name, nickname=nick_name, description=description, relation=relation)
+        db.session.add(family)
+        db.session.commit()
+    except:
+        return jsonify({'code': 100})
+    return jsonify({'code': 200})
+
+
+@main.route('/comment', methods=['GET', 'POST'])
+def addcomment():
+    try:
+        name = request.form['name']
+        description = request.form['description']
+        family = Comments(name=name, description=description)
+        db.session.add(family)
+        db.session.commit()
+    except:
+        return jsonify({'code': 100})
+    return jsonify({'code': 200})

@@ -27,7 +27,7 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    DEBUG = True
+    # DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://zryzs:woaiwojia520@localhost/gift'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
